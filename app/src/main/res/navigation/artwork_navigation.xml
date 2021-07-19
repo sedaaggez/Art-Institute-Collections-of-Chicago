@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/artwork_navigation"
+    app:startDestination="@id/artworksFragment">
+
+    <fragment
+        android:id="@+id/artworksFragment"
+        android:name="com.sedaaggez.chicagoartinstitutecollections.ArtworksFragment"
+        android:label="Artworks"
+        tools:layout="@layout/fragment_artworks">
+        <action
+            android:id="@+id/action_artworksFragment_to_artworkDetailFragment"
+            app:destination="@id/artworkDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/artworkDetailFragment"
+        android:name="com.sedaaggez.chicagoartinstitutecollections.ArtworkDetailFragment"
+        android:label="Artwork Detail"
+        tools:layout="@layout/fragment_artwork_detail" />
+
+</navigation>
