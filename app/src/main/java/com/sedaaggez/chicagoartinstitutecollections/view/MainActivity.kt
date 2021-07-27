@@ -1,10 +1,11 @@
-package com.sedaaggez.chicagoartinstitutecollections
+package com.sedaaggez.chicagoartinstitutecollections.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.sedaaggez.chicagoartinstitutecollections.R
 
 class MainActivity : AppCompatActivity() {
 

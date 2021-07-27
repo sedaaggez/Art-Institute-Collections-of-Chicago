@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/artworksFragment"
-        android:name="com.sedaaggez.chicagoartinstitutecollections.ArtworksFragment"
+        android:name="com.sedaaggez.chicagoartinstitutecollections.view.ArtworksFragment"
         android:label="Artworks"
         tools:layout="@layout/fragment_artworks">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/artworkDetailFragment"
-        android:name="com.sedaaggez.chicagoartinstitutecollections.ArtworkDetailFragment"
+        android:name="com.sedaaggez.chicagoartinstitutecollections.view.ArtworkDetailFragment"
         android:label="Artwork Detail"
         tools:layout="@layout/fragment_artwork_detail" />
 
