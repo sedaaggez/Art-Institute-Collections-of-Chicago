@@ -6,7 +6,7 @@ import com.sedaaggez.chicagoartinstitutecollections.model.Artwork
 
 class ArtworksViewModel : ViewModel(){
 
-    val artworks = MutableLiveData<Artwork>()
+    val artworks = MutableLiveData<List<Artwork>>()
     val artworkError = MutableLiveData<Boolean>()
     val artworkLoading = MutableLiveData<Boolean>()
 
