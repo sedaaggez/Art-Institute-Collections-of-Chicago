@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sedaaggez.chicagoartinstitutecollections.R
 import com.sedaaggez.chicagoartinstitutecollections.adapter.ArtworkAdapter
@@ -29,9 +30,9 @@ class ArtworksFragment : Fragment() {
 
 
         viewModel = ViewModelProviders.of(this).get(ArtworksViewModel::class.java)
-        viewModel.getData()
+        viewModel.getData(1)
 
-        recyclerViewArtWorks.layoutManager = LinearLayoutManager(context)
+        recyclerViewArtWorks.layoutManager = GridLayoutManager(context, 2)
         recyclerViewArtWorks.adapter = artworkAdapter
 
         observeLiveData()
