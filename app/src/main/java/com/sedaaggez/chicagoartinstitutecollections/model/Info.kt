@@ -1,7 +1,11 @@
 package com.sedaaggez.chicagoartinstitutecollections.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Info(
-    val licenseText: String?,
-    val licenseLinks: List<String>?,
+    @SerializedName("license_text")
+    val licenseText: String,
+    @SerializedName("license_links")
+    val licenseLinks: List<String>,
     val version: String?
 )
