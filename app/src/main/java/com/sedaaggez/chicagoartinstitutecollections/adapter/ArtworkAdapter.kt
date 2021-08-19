@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sedaaggez.chicagoartinstitutecollections.R
 import com.sedaaggez.chicagoartinstitutecollections.model.Artwork
+import com.sedaaggez.chicagoartinstitutecollections.util.downloadFromUrl
+import com.sedaaggez.chicagoartinstitutecollections.util.placeholderProgressBar
 import kotlinx.android.synthetic.main.item_artwork.view.*
 
 class ArtworkAdapter(val artworkList: ArrayList<Artwork>): RecyclerView.Adapter<ArtworkAdapter.ArtworkViewHolder>()  {
@@ -25,6 +27,8 @@ class ArtworkAdapter(val artworkList: ArrayList<Artwork>): RecyclerView.Adapter<
         holder.view.textViewArtist.text = artworkList[position].artistTitle
         holder.view.textViewStyle.text = artworkList[position].styleTitle
         holder.view.textViewYear.text = artworkList[position].fiscalYear.toString()
+
+        holder.view.imageView.downloadFromUrl("https://www.artic.edu/iiif/2/" + artworkList[position].imageID + "/full/843,/0/default.jpg", placeholderProgressBar(holder.view.context))
     }
 
     override fun getItemCount(): Int {
