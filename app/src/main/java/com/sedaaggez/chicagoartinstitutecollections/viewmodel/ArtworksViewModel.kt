@@ -2,14 +2,15 @@ package com.sedaaggez.chicagoartinstitutecollections.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.sedaaggez.chicagoartinstitutecollections.model.Artwork
 import com.sedaaggez.chicagoartinstitutecollections.model.ArtworkList
 import com.sedaaggez.chicagoartinstitutecollections.service.ArtworkAPIService
+import com.sedaaggez.chicagoartinstitutecollections.service.ArtworkDatabase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.launch
 
 class ArtworksViewModel(application: Application) : BaseViewModel(application){
 
@@ -28,7 +29,7 @@ class ArtworksViewModel(application: Application) : BaseViewModel(application){
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<ArtworkList>() {
                     override fun onSuccess(t: ArtworkList) {
-                        showArtwork(t)
+                        storeInSQLite(t.data!!)
                     }
 
                     override fun onError(e: Throwable) {
@@ -42,8 +43,22 @@ class ArtworksViewModel(application: Application) : BaseViewModel(application){
         )
     }
 
-    private fun showArtwork(artworkList: ArtworkList) {
-        artworks.value = artworkList.data
+    private fun storeInSQLite(list: List<Artwork>) {
+        launch {
+            val dao = ArtworkDatabase(getApplication()).artworkDAO()
+            dao.deleteAllArtworks()
+            val listLong = dao.insertAll(*list.toTypedArray())
+            var i = 0
+            while (i < list.size) {
+                list[i].uuid = listLong[i].toInt()
+                i += 1
+            }
+            showArtwork(list)
+        }
+    }
+
+    private fun showArtwork(list: List<Artwork>) {
+        artworks.value = list
         artworkError.value = false
         artworkLoading.value = false
     }

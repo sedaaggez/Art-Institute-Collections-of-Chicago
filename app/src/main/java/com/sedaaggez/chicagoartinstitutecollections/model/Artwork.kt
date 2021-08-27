@@ -273,4 +273,7 @@ data class Artwork(
     val lastUpdated: String?,
     @ColumnInfo(name = "timestamp")
     val timestamp: String?
-)
+) {
+    @PrimaryKey(autoGenerate = true)
+    var uuid: Int = 0
+}
