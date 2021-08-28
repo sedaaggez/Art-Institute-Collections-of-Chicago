@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.sedaaggez.chicagoartinstitutecollections.R
 import com.sedaaggez.chicagoartinstitutecollections.adapter.ArtworkAdapter
 import com.sedaaggez.chicagoartinstitutecollections.viewmodel.ArtworksViewModel
