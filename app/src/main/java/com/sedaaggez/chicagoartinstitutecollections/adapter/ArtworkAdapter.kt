@@ -3,14 +3,17 @@ package com.sedaaggez.chicagoartinstitutecollections.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.sedaaggez.chicagoartinstitutecollections.R
 import com.sedaaggez.chicagoartinstitutecollections.model.Artwork
 import com.sedaaggez.chicagoartinstitutecollections.util.downloadFromUrl
 import com.sedaaggez.chicagoartinstitutecollections.util.placeholderProgressBar
+import com.sedaaggez.chicagoartinstitutecollections.view.ArtworksFragmentDirections
 import kotlinx.android.synthetic.main.item_artwork.view.*
 
-class ArtworkAdapter(val artworkList: ArrayList<Artwork>): RecyclerView.Adapter<ArtworkAdapter.ArtworkViewHolder>()  {
+class ArtworkAdapter(val artworkList: ArrayList<Artwork>) :
+    RecyclerView.Adapter<ArtworkAdapter.ArtworkViewHolder>() {
 
     class ArtworkViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
 
@@ -28,7 +31,17 @@ class ArtworkAdapter(val artworkList: ArrayList<Artwork>): RecyclerView.Adapter<
         holder.view.textViewStyle.text = artworkList[position].styleTitle
         holder.view.textViewYear.text = artworkList[position].fiscalYear.toString()
 
-        holder.view.imageView.downloadFromUrl("https://www.artic.edu/iiif/2/" + artworkList[position].imageID + "/full/843,/0/default.jpg", placeholderProgressBar(holder.view.context))
+        holder.view.imageViewDetail.downloadFromUrl(
+            "https://www.artic.edu/iiif/2/" + artworkList[position].imageID + "/full/843,/0/default.jpg",
+            placeholderProgressBar(holder.view.context)
+        )
+        holder.view.setOnClickListener {
+            val action =
+                ArtworksFragmentDirections.actionArtworksFragmentToArtworkDetailFragment(
+                    artworkList[position].uuid
+                )
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     override fun getItemCount(): Int {

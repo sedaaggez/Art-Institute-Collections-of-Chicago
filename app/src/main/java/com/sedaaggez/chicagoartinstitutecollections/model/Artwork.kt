@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class Artwork(
-    @PrimaryKey
     @ColumnInfo(name = "id")
     val id: Long?,
     @ColumnInfo(name = "api_model")
@@ -23,7 +22,7 @@ data class Artwork(
     val title: String?,
     @ColumnInfo(name = "alt_titles")
     @SerializedName("alt_titles")
-    val altTitles: Any?,
+    val altTitles: String?,
     @ColumnInfo(name = "thumbnail")
     val thumbnail: Thumbnail?,
     @ColumnInfo(name = "main_reference_number")
@@ -34,7 +33,7 @@ data class Artwork(
     val hasNotBeenViewedMuch: Boolean?,
     @ColumnInfo(name = "boost_rank")
     @SerializedName("boost_rank")
-    val boostRank: Any?,
+    val boostRank: String?,
     @ColumnInfo(name = "date_start")
     @SerializedName("date_start")
     val dateStart: Long?,
@@ -86,7 +85,7 @@ data class Artwork(
     val fiscalYear: Long?,
     @ColumnInfo(name = "fiscal_year_deaccession")
     @SerializedName("fiscal_year_deaccession")
-    val fiscalYearDeaccession: Any?,
+    val fiscalYearDeaccession: String?,
     @ColumnInfo(name = "is_public_domain")
     @SerializedName("is_public_domain")
     val isPublicDomain: Boolean?,
@@ -98,7 +97,7 @@ data class Artwork(
     val maxZoomWindowSize: Long?,
     @ColumnInfo(name = "copyright_notice")
     @SerializedName("copyright_notice")
-    val copyrightNotice: Any?,
+    val copyrightNotice: String?,
     @ColumnInfo(name = "has_multimedia_resources")
     @SerializedName("has_multimedia_resources")
     val hasMultimediaResources: Boolean?,
@@ -123,16 +122,16 @@ data class Artwork(
     val onLoanDisplay: String?,
     @ColumnInfo(name = "gallery_title")
     @SerializedName("gallery_title")
-    val galleryTitle: Any?,
+    val galleryTitle: String?,
     @ColumnInfo(name = "gallery_id")
     @SerializedName("gallery_id")
-    val galleryID: Any?,
+    val galleryID: String?,
     @ColumnInfo(name = "artwork_type_title")
     @SerializedName("artwork_type_title")
-    val artworkTypeTitle: Any?,
+    val artworkTypeTitle: String?,
     @ColumnInfo(name = "artwork_type_id")
     @SerializedName("artwork_type_id")
-    val artworkTypeID: Any?,
+    val artworkTypeID: String?,
     @ColumnInfo(name = "department_title")
     @SerializedName("department_title")
     val departmentTitle: String?,
@@ -147,10 +146,10 @@ data class Artwork(
     val artistTitle: String?,
     @ColumnInfo(name = "alt_artist_ids")
     @SerializedName("alt_artist_ids")
-    val altArtistIDS: List<Any>?,
+    val altArtistIDS: List<String>?,
     @ColumnInfo(name = "artist_ids")
     @SerializedName("artist_ids")
-    val artistIDS: List<Long>?,
+    val artistIDS: List<Int>?,
     @ColumnInfo(name = "artist_titles")
     @SerializedName("artist_titles")
     val artistTitles: List<String>?,
@@ -162,7 +161,7 @@ data class Artwork(
     val categoryTitles: List<String>?,
     @ColumnInfo(name = "artwork_catalogue_ids")
     @SerializedName("artwork_catalogue_ids")
-    val artworkCatalogueIDS: List<Any>?,
+    val artworkCatalogueIDS: List<String>?,
     @ColumnInfo(name = "term_titles")
     @SerializedName("term_titles")
     val termTitles: List<String>?,
@@ -225,7 +224,7 @@ data class Artwork(
     val techniqueID: String?,
     @ColumnInfo(name = "alt_technique_ids")
     @SerializedName("alt_technique_ids")
-    val altTechniqueIDS: List<Any>?,
+    val altTechniqueIDS: List<String>?,
     @ColumnInfo(name = "technique_ids")
     @SerializedName("technique_ids")
     val techniqueIDS: List<String>?,
@@ -234,7 +233,7 @@ data class Artwork(
     val techniqueTitles: List<String>?,
     @ColumnInfo(name = "theme_titles")
     @SerializedName("theme_titles")
-    val themeTitles: List<Any>?,
+    val themeTitles: List<String>?,
     @ColumnInfo(name = "image_id")
     @SerializedName("image_id")
     val imageID: String?,
@@ -249,19 +248,19 @@ data class Artwork(
     val soundIDS: List<String>?,
     @ColumnInfo(name = "video_ids")
     @SerializedName("video_ids")
-    val videoIDS: List<Any>?,
+    val videoIDS: List<String>?,
     @ColumnInfo(name = "text_ids")
     @SerializedName("text_ids")
-    val textIDS: List<Any>?,
+    val textIDS: List<String>?,
     @ColumnInfo(name = "section_ids")
     @SerializedName("section_ids")
-    val sectionIDS: List<Any>?,
+    val sectionIDS: List<String>?,
     @ColumnInfo(name = "section_titles")
     @SerializedName("section_titles")
-    val sectionTitles: List<Any>?,
+    val sectionTitles: List<String>?,
     @ColumnInfo(name = "site_ids")
     @SerializedName("site_ids")
-    val siteIDS: List<Any>?,
+    val siteIDS: List<String>?,
     @ColumnInfo(name = "suggest_autocomplete_all")
     @SerializedName("suggest_autocomplete_all")
     val suggestAutocompleteAll: List<SuggestAutocompleteAll>?,

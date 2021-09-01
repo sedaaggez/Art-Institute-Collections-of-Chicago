@@ -19,6 +19,14 @@
         android:id="@+id/artworkDetailFragment"
         android:name="com.sedaaggez.chicagoartinstitutecollections.view.ArtworkDetailFragment"
         android:label="Artwork Detail"
-        tools:layout="@layout/fragment_artwork_detail" />
+        tools:layout="@layout/fragment_artwork_detail" >
+        <action
+            android:id="@+id/action_artworkDetailFragment_to_artworksFragment"
+            app:destination="@id/artworksFragment" />
+        <argument
+            android:name="artworkUuid"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 
 </navigation>
