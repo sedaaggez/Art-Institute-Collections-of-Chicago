@@ -13,7 +13,7 @@ interface ArtworkDAO {
     @Query("SELECT * FROM artwork")
     suspend fun getAllArtworks(): List<Artwork>
 
-    @Query("SELECT * FROM artwork WHERE id = :artworkId")
+    @Query("SELECT * FROM artwork WHERE uuid = :artworkId")
     suspend fun getArtwork(artworkId: Int): Artwork
 
     @Query("DELETE FROM artwork")
