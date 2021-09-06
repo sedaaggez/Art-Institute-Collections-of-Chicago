@@ -30,10 +30,6 @@ class ArtworkAdapter(val artworkList: ArrayList<Artwork>) :
     override fun onBindViewHolder(holder: ArtworkViewHolder, position: Int) {
         holder.view.artwork = artworkList[position]
 
-//        holder.view.imageViewDetail.downloadFromUrl(
-//            "https://www.artic.edu/iiif/2/" + artworkList[position].imageID + "/full/843,/0/default.jpg",
-//            placeholderProgressBar(holder.view.context)
-//        )
 //        holder.view.setOnClickListener {
 //            val action =
 //                ArtworksFragmentDirections.actionArtworksFragmentToArtworkDetailFragment(

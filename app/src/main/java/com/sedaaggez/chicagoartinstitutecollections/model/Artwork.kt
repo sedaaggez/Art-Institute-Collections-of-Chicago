@@ -275,4 +275,8 @@ data class Artwork(
 ) {
     @PrimaryKey(autoGenerate = true)
     var uuid: Int = 0
+
+    val imageUrl: String
+        get() = String.format("https://www.artic.edu/iiif/2/$imageID/full/843,/0/default.jpg")
+
 }
