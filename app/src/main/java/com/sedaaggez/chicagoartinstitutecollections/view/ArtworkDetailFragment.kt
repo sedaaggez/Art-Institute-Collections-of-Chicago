@@ -12,7 +12,6 @@ import com.sedaaggez.chicagoartinstitutecollections.util.downloadFromUrl
 import com.sedaaggez.chicagoartinstitutecollections.util.placeholderProgressBar
 import com.sedaaggez.chicagoartinstitutecollections.viewmodel.ArtworkDetailViewModel
 import kotlinx.android.synthetic.main.fragment_artwork_detail.*
-import kotlinx.android.synthetic.main.item_artwork.view.*
 
 class ArtworkDetailFragment : Fragment() {
 
@@ -53,5 +52,4 @@ class ArtworkDetailFragment : Fragment() {
             }
         })
     }
-
 }
