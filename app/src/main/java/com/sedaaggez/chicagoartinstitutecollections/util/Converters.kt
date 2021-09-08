@@ -10,9 +10,7 @@ import java.lang.reflect.Type
 import java.util.*
 import kotlin.collections.ArrayList
 
-
 class Converters {
-
     var gson = Gson()
 
     @TypeConverter
