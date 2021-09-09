@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.ArtworkDetailFragment">
+
+    <data>
+
+        <variable
+            name="artwork"
+            type="com.sedaaggez.chicagoartinstitutecollections.model.Artwork"></variable>
+
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,6 +20,7 @@
             android:id="@+id/imageViewDetail"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:downloadUrl="@{artwork.imageUrl}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -20,6 +29,7 @@
             android:id="@+id/textViewTitleName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{artwork.title}"
             android:layout_marginTop="25dp"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -31,6 +41,7 @@
             android:id="@+id/textViewArtistName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{artwork.artistTitle}"
             android:layout_marginTop="30dp"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -42,14 +53,13 @@
             android:id="@+id/textViewStyleName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{artwork.styleTitle}"
             android:layout_marginTop="30dp"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewArtistName" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
