@@ -149,7 +149,7 @@ data class Artwork(
     val altArtistIDS: List<String>?,
     @ColumnInfo(name = "artist_ids")
     @SerializedName("artist_ids")
-    val artistIDS: List<Int>?,
+    val artistIDS: List<String>?,
     @ColumnInfo(name = "artist_titles")
     @SerializedName("artist_titles")
     val artistTitles: List<String>?,
