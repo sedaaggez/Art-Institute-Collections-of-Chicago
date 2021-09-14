@@ -10,11 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.sedaaggez.chicagoartinstitutecollections.R
 import com.sedaaggez.chicagoartinstitutecollections.databinding.FragmentArtworkDetailBinding
-import com.sedaaggez.chicagoartinstitutecollections.databinding.FragmentArtworksBinding
-import com.sedaaggez.chicagoartinstitutecollections.util.downloadFromUrl
-import com.sedaaggez.chicagoartinstitutecollections.util.placeholderProgressBar
 import com.sedaaggez.chicagoartinstitutecollections.viewmodel.ArtworkDetailViewModel
-import kotlinx.android.synthetic.main.fragment_artwork_detail.*
 
 class ArtworkDetailFragment : Fragment() {
 
