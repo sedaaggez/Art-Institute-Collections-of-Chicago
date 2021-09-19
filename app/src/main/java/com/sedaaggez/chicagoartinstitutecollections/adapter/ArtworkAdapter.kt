@@ -34,7 +34,6 @@ class ArtworkAdapter(val artworkList: ArrayList<Artwork>) :
     }
 
     fun updateArtworkList(newArtworkList: List<Artwork>) {
-        artworkList.clear()
         artworkList.addAll(newArtworkList)
         notifyDataSetChanged()
     }

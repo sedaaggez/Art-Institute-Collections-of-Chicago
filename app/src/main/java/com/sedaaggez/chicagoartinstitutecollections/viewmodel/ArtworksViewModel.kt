@@ -17,6 +17,8 @@ class ArtworksViewModel(application: Application) : BaseViewModel(application){
     val artworks = MutableLiveData<List<Artwork>>()
     val artworkError = MutableLiveData<Boolean>()
     val artworkLoading = MutableLiveData<Boolean>()
+    val totalPages = MutableLiveData<Long>()
+
 
     private val artworkAPIService = ArtworkAPIService()
     private val disposable = CompositeDisposable()
@@ -30,6 +32,7 @@ class ArtworksViewModel(application: Application) : BaseViewModel(application){
                 .subscribeWith(object : DisposableSingleObserver<ArtworkList>() {
                     override fun onSuccess(t: ArtworkList) {
                         storeInSQLite(t.data!!)
+                        totalPages.value = t.pagination!!.totalPages
                     }
 
                     override fun onError(e: Throwable) {
