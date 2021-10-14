@@ -19,3 +19,8 @@ The application must have a list of artworks and a artwork detail page. On the d
 - Room-> SQLite, Coroutine,Threading
 - Navigation
 - Infinite scroll list, Pagination
+
+
+# License
+
+This project is licensed under the  GNU General Public License v3.0 License - see the [LICENSE](LICENSE) file for details.
